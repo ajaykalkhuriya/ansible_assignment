@@ -1,0 +1,9 @@
+---
+ - hosts: localhost
+   user: aj
+   become: yes
+   tasks:
+   - name: copy war file to tomcat webapp folder
+     copy:
+       src: /home/aj/Downloads/sample.war
+       dest: /opt/tomcat/webapps
