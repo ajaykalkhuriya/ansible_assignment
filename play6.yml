@@ -1,0 +1,15 @@
+---
+ - hosts: 192.168.33.16
+   user: vagrant
+   become: yes
+   tasks:
+   - name: create file
+     file:
+      path: "/var/log/ajay.txt"
+      state: touch
+   - name: copy
+     copy:
+        debug:
+          var: time.date
+          dest: /home/vagrant/var/log/ajay.txt
+          content: " {{ time.date }} "
