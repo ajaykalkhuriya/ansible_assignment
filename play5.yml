@@ -1,0 +1,9 @@
+---
+- hosts: ec2
+  become: yes
+  tasks:
+  -  name: jdk 
+     apt:
+       name: default-jdk
+       state: latest
+       install_recommends: 'no'
