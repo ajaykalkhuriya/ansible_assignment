@@ -1,0 +1,9 @@
+---
+ - hosts: localhost
+   user: aj
+   become: yes
+   tasks:
+   - name: copy war file to tomcat webapp folder
+     copy:
+       src: /var/lib/jenkins/workspace/build project for ansible/target/my-app-1.0-SNAPSHOT.jar
+       dest: /opt/tomcat/webapps
